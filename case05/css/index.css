@@ -1,0 +1,417 @@
+/*-------------------------公共样式-----------------------*/
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.clear{
+    clear: both;
+}
+body{
+    font-family: "Arial";
+}
+.inner{
+    width: 1280px;
+    margin: 0 auto;
+}
+.title{
+    padding-top: 98px;
+    font-size: 25px;
+    color: #333;
+    line-height: 27px;
+    text-align: center;
+    animation: text_shadow 2s infinite;
+}
+@keyframes text_shadow {
+    0%{
+        text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    }
+    50%{
+        text-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    100%{
+        text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    }
+}
+.sub_title{
+    font-family: "Times New Roman";
+    font-size: 16px;
+    font-style: italic;
+    color: #999;
+    line-height: 110px;
+    text-align: center;
+    position: relative;
+}
+.sub_title:before{
+    content: "";
+    width: 20px;
+    height: 1px;
+    background: #ccc;
+    position: absolute;
+    bottom: -5px;
+    left: 585px;
+}
+.sub_title:after{
+    content: "";
+    width: 20px;
+    height: 1px;
+    background: #ccc;
+    position: absolute;
+    bottom: -5px;
+    right: 585px;
+}
+.box{
+    width: 7px;
+    height: 7px;
+    margin: 0 auto;
+    background: #e0a240;
+    transform: rotate(45deg);
+}
+/*-------------------------header部分-----------------------*/
+header{
+    height: 824px;
+    background: #e1f0f5 url("../images/oshin-slide-1.jpg") no-repeat center;
+    background-size: cover;
+}
+.header_t{
+    width: 100%;
+    padding: 10px 0 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,0.8);
+    z-index: 99;
+}
+.logo{
+    float: left;
+    padding-left: 30px;
+}
+.logo img{
+    display: block;
+}
+nav{
+    float: left;
+    padding-left: 54px;
+}
+nav li{
+    float: left;
+}
+nav a{
+    display: block;
+    margin: 0 21px;
+    font-size: 12px;
+    color: #333;
+    line-height: 50px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+}
+#current{
+    color: #e0a240;
+}
+nav a:hover{
+    color: #e0a240;
+    transform: scale(1.2,1.2);
+}
+.share{
+    float: right;
+    padding-right: 34px;
+}
+.share li{
+    float: left;
+    margin-left: 22px;
+}
+.share a{
+    font-family: "FontAwesome";
+    font-size: 20px;
+    color: #333;
+    line-height: 50px;
+    transform: rotate(0deg);
+}
+.share a:hover{
+    color: #e0a240;
+    transform: rotate(360deg);
+    transition: all 0.8s;
+}
+.banner{
+    padding-top: 183px;
+}
+.banner_t{
+    font-size: 18px;
+    color: #333;
+    line-height: 80px;
+    text-align: center;
+    letter-spacing: 8px;
+    animation: banner_t 1s;
+}
+@keyframes banner_t {
+    0%{
+        transform: translate(-1300px,0px);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
+.banner_c{
+    width: 350px;
+    margin: 0 auto;
+    transition: all 0.5s;
+    animation: banner_c 1s;
+}
+@keyframes banner_c {
+    0%{
+        transform: translate(0,-650px);
+    }
+    100%{
+        transform: translate(0,0px);
+    }
+}
+.banner_c:hover{
+    width: 550px;
+    background: rgba(0,0,0,0.2);
+}
+.banner_c div{
+    font-size: 60px;
+    font-weight: bold;
+    color: #333;
+    line-height: 102px;
+    text-align: center;
+    letter-spacing: 6px;
+    border: 7px black solid;
+    cursor: pointer;
+}
+.banner_c div:hover{
+    color: #e0a240;
+}
+.banner_b{
+    font-family: "Times New Roman";
+    font-size: 28px;
+    font-style: italic;
+    color: #333;
+    line-height: 118px;
+    text-align: center;
+    animation: banner_b 1s;
+}
+@keyframes banner_b {
+    0%{
+        transform: translate(1300px,0px);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
+/*-------------------------oshine部分-----------------------*/
+#oshine{
+    height: 828px;
+    background: url("../images/oshin-mockups-1024x377.png") no-repeat bottom;
+}
+#oshine .box+p{
+    font-size: 18px;
+    color: #999;
+    line-height: 34px;
+    padding: 35px 240px 0;
+    text-align: center;
+}
+/*-------------------------icon_nav部分-----------------------*/
+#icon_nav{
+    background-image: linear-gradient(90deg,#f2f5f8 0%,#f2f5f8 49%,#edf0f2 51%,#edf0f2 100%);
+}
+#icon_nav li{
+    float: left;
+    width: 320px;
+    height: 246px;
+}
+#icon_nav li:nth-child(odd){
+    background: #f2f5f8;
+}
+#icon_nav li:nth-child(even){
+     background: #edf0f2;
+}
+#icon_nav a{
+    display: block;
+    height: 184px;
+    padding-top: 62px;
+    font-size: 15px;
+    color: #333;
+    line-height: 53px;
+    text-align: center;
+}
+#icon_nav span{
+    display: block;
+    font-size: 60px;
+    line-height: 60px;
+    transition: all 0.2s;
+}
+#icon_nav li:nth-child(1) a:hover span{
+    animation: icon_1 0.8s;
+}
+@keyframes icon_1 {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+#icon_nav li:nth-child(2) a:hover span{
+    animation: icon_2 0.8s;
+}
+@keyframes icon_2 {
+    0%{
+        transform: scale(1,1);
+    }
+    50%{
+        transform: scale(1.5,1.5);
+    }
+    100%{
+        transform: scale(1,1);
+    }
+}
+#icon_nav li:nth-child(3) a:hover span{
+    animation: icon_3 0.8s;
+}
+@keyframes icon_3 {
+    0%{
+        transform: skew(0,0);
+    }
+    50%{
+        transform: skew(45deg,0);
+    }
+    100%{
+        transform: skew(0,0);
+    }
+}
+#icon_nav li:nth-child(4) a:hover span{
+    animation: icon_4 0.8s;
+}
+@keyframes icon_4 {
+    0%{
+        transform: translate(0,0);
+    }
+    50%{
+        transform: translate(0,-30px);
+    }
+    100%{
+        transform: translate(0,0);
+    }
+}
+/*-------------------------iphone部分-----------------------*/
+#iphone{
+    height: 765px;
+    padding-top: 110px;
+    background: url("../images/iphone-oshin-513x1024.png") no-repeat center;
+    background-size: 342px 694px;
+}
+.iphone_l{
+    float: left;
+    width: 275px;
+    padding-left: 121px;
+}
+.iphone_r{
+    float: right;
+    width: 275px;
+    padding-right: 73px;
+}
+#iphone h4{
+    font-size: 16px;
+    color: #333;
+    line-height: 53px;
+    position: relative;
+}
+#iphone p{
+    font-size: 14px;
+    color: #999;
+    line-height: 26px;
+    padding-bottom: 39px;
+}
+#iphone span{
+    position: absolute;
+    left: -60px;
+    font-size: 30px;
+    line-height: 53px;
+    color: #e0a240;
+}
+/*-------------------------bg_pic部分-----------------------*/
+#bg_pic{
+    background: url(../images/wanderlust01.jpg) no-repeat fixed;
+    height: 400px;
+    background-size: cover;
+}
+/*-------------------------work部分-----------------------*/
+#work{
+    height: 1089px;
+}
+.work_nav{
+    padding-top: 85px;
+    padding-left: 344px;
+}
+.work_nav li{
+    float: left;
+    margin-right: 5px;
+}
+.work_nav a{
+    display: block;
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 42px;
+    text-transform: uppercase;
+    color: #333;
+    border: 1px solid #fff;
+}
+.work_nav li:nth-child(1) a{
+    color: #e0a240;
+    border: 1px solid #e0a240;
+}
+.work_nav a:hover{
+    color: #e0a240;
+    border: 1px solid #e0a240;
+}
+.work_pic{
+    padding-top: 50px;
+    padding-left: 20px;
+}
+.work_pic li{
+    float: left;
+    margin: 0 20px 40px;
+}
+.work_pic a{
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+.work_pic img{
+    display: block;
+    width: 374px;
+    transition: all 0.5s;
+}
+.work_pic li:nth-child(odd) a:hover img{
+    transform: scale(1.2,1.2);
+}
+.work_pic li:nth-child(even) a:before{
+    content: "Image Captions";
+    width: 374px;
+    height: 221px;
+    background: #e0a240;
+    background-color: rgba(224,162,64,0);
+    position: absolute;
+    left: 0;
+    top: 0;
+    /*opacity: 0;*/
+    transition: all 0.5s;
+    font-size: 16px;
+    line-height: 221px;
+    text-align: center;
+    color: transparent;
+}
+.work_pic li:nth-child(even) a:hover:before{
+    background-color: rgba(224,162,64,0.5);
+    color: blue;
+    /*opacity: 0.5;*/
+}

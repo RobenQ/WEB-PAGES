@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>UC浏览器</title>
+		<style>
+			h1,h2,h3,h4,h5,h6,p,body,ul,ol{
+				padding: 0;
+				margin: 0;
+			}
+			img{
+				vertical-align: bottom;
+			}
+			li{
+				list-style: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			.pdr{
+				padding-right: 15px;
+			}
+			.pdttt{
+				padding-top: 26px;
+			}
+			.bd1{
+				border-bottom: 1px dotted #565656;
+			}
+			.pdtt{
+				padding-top: 48px;
+			}
+			.m{
+				margin-right: 58px;
+			}
+			.pdt{
+				padding-top: 42px;
+			}
+			.bd{
+				border: 1px solid red;
+			}
+			.bdc{
+				background-color: greenyellow;
+			}
+			.fl{
+				float: left;
+			}
+			.fr{
+				float: right;
+			}
+			.clearfix::before,.clearfix::after{
+				content: "";
+				display: table;
+			}
+			.clearfix::after{
+				clear: both;
+			}
+			.clearfix{
+				zoom: 1;
+			}
+			.w{
+				width: 986px;
+				margin: 0 auto;
+			}
+			.w1{
+				width: 290px;
+			}
+			header{
+				position: fixed;
+				width: 100%;
+				background-color: #fff;
+				z-index: 1;
+			}
+			.logo{
+				padding-top: 15px;
+				padding-bottom: 12px;
+			}
+			.navigation{
+				padding-top: 5px;
+				padding-right: 20px;
+			}
+			.navli{
+				border-bottom: 3px solid #ff6302 white;
+				margin-left: 32px;
+				position: relative;
+			}
+			.current{
+				border-bottom: 3px solid orange;
+			}
+			.navli>a{
+				display: block;
+				font-family: "微软雅黑";
+				font-size: 20px;
+				line-height: 62px;
+				padding: 0 10px;
+				
+			}
+			/* .navli a:hover{
+				border-bottom: 3px solid #ff6302;
+			} */
+			/* 以下是二级导航 */
+			.subnav{
+				display: none;
+				position: absolute;
+			}
+			.navli:nth-child(2):hover .subnav{
+				display: block;
+			}
+			.navli:nth-child(3):hover .subnav{
+				display: block;
+			}
+			/* 以下是main区 */
+			.main{
+				padding-top: 70px;
+			}
+			/* banner区 */
+			.banner{
+				height: 400px;
+				background-image: url(images/banner.jpg);
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-color: #181818;
+			}
+			.newsheader{
+				padding-bottom: 21px;
+			}
+			.img{
+				font-size: 13px;
+				background-color: #f2f2f2;
+				text-align: center;
+				line-height: 34px;
+			}
+			.news{
+				height: 411px;
+			}
+			.news ul{
+				padding-top: 13px;
+			}
+			
+			.news li{
+				font-size: 12px;
+				line-height: 20px;
+			}
+			.footer{
+				background-color: #333333;
+			}
+			.footer li{
+				color: #b4a7ae;
+				font-size: 11px;
+				line-height: 19px;
+				display: block;
+			}
+			.d1 li{
+				margin-right: 89px;
+			}
+			.d2 li{
+				margin-right: 117px;
+			}
+			.d3 li{
+				margin-right: 117px;
+			}
+			.d4 li{
+				margin-right: 92px;
+			}
+			.d5 li{
+				margin-right: 115px;
+			}
+			.D1{
+				height: 277px;
+			}
+			.D2{
+				height: 37px;
+				padding-top: 14px;
+				padding-left: 2px;
+			}
+			.D2 div{
+				color: #b4a7ae;
+				font-size: 11px;
+				border-right: 2px solid #605d4e;
+				padding: 0 8px;
+			}
+			.D3{
+				height: 37px;
+				padding-top: 14px;
+				padding-left: 3px;
+			}
+			.D3 div{
+				color: #b4a7ae;
+				font-size: 11px;
+				border-right: 2px solid #605d4e;
+				padding-right: 8px;
+				padding-left: 7px;
+			}
+			.D3 div:nth-child(1){
+				border: none;
+				color: #66656b;
+				padding-right: 1px;
+			}
+			.D4{
+				height: 117px;
+			}
+			.D4 div:nth-child(1){
+				padding-top: 31px;
+			}
+			.D4 div:nth-child(2){
+				color:#66656b;
+				font-size: 11px;
+				padding-top: 24px;
+				padding-left: 16px;
+			}
+			.footer{
+				margin-top: 20px;
+				background-color: #333;
+			}
+			.icons{
+				border-bottom: 1px solid #efefef;
+				height: 50px;
+			}
+			.iconw{
+				position: relative;
+			}
+			.icon{
+				width: 138px;
+				height: 50px;
+				padding-top: 77px;
+				font-family: "微软雅黑";
+				font-size: 12px;
+				line-height: 42px;
+				text-align: center;
+				background-image: url(images/icon.png);
+				background-repeat: no-repeat;
+				background-position: 49px 21px;
+			}
+			.icon:nth-child(2){
+				background-position: -89px 21px;
+			}
+			.icon:nth-child(3){
+				background-position: -227px 21px;
+				position: relative;
+			}
+			.icon:nth-child(3)::before{
+				content: "";
+				width: 23px;
+				height: 11px;
+				background: url(images/icon.png) no-repeat -140px -280px;
+				position: absolute;
+				left: 82px;
+				top: 15px;
+			}
+			.icon:nth-child(4){
+				background-position: -366px 21px;
+				position: relative;
+			}
+			.icon:nth-child(4)::before{
+				content: "";
+				width: 23px;
+				height: 11px;
+				background: url(images/icon.png) no-repeat -140px -280px;
+				position: absolute;
+				left: 82px;
+				top: 15px;
+			}
+			.icon:nth-child(5){
+				background-position: -508px 21px;
+			}
+			.icon:nth-child(6){
+				background-position: -646px 21px;
+			}
+			.icon:hover{
+				background-position: 49px -99px;
+			}
+			.icon:nth-child(2):hover{
+				background-position: -89px -99px;
+			}
+			.icon:nth-child(3):hover{
+				background-position: -227px -99px;
+			}
+			.icon:nth-child(4):hover{
+				background-position: -366px -99px;
+			}
+			.icon:nth-child(5):hover{
+				background-position: -508px -99px;
+			}
+			.icon:nth-child(6):hover{
+				background-position: -646px -99px;
+			}
+			.twocode{
+				padding-top: 131px;
+				width: 128px;
+				background-image: url(images/twocode.png);
+				background-repeat: no-repeat;
+				text-align: center;
+				position: absolute;
+				right: -4px;
+				top: -32px;
+			}
+			.twocode a{
+				font-family: "microsoft yahei";
+				font-size: 12px;
+				line-height: 22px;
+				color: #5b696a;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="clearfix">
+			<div class="w">
+				<div class="logo fl"><img src="images/uclogo.png" alt=""></div>
+				<!-- <div class="navigation fr"> -->
+				<ul class="navigation fr">
+					<li class="navli fl current"><a href="#">首页</a></li>
+					<li class="navli fl">
+						<a href="#">下载</a>
+						<ul class="subnav">
+							<li><a href="">手机UC</a></li>
+							<li><a href="">电脑浏览器</a></li>
+							<li><a href="">TV浏览器</a></li>
+						</ul>
+					</li>
+					<li class="navli fl">
+						<a href="#">公司</a>
+						<ul class="subnav">
+							<li><a href="">公司概况</a></li>
+							<li><a href="">公司动态</a></li>
+							<li><a href="">管理团队</a></li>
+							<li><a href="">企业文化</a></li>
+							<li><a href="">粉丝专区</a></li>
+							<li><a href="">荣誉之旅</a></li>
+							<li><a href="">联系我们</a></li>
+							<li><a href="">UC闪屏</a></li>
+						</ul>
+					</li>
+					<li class="navli fl"><a href="#">合作</a></li>
+					<li class="navli fl"><a href="#">社区</a></li>
+					<li class="navli fl"><a href="#">帮助</a></li>
+				</ul>
+				</div>
+			</div>
+		</header>
+		<div class="main">
+			<div class="banner"></div>
+			<div class="icons">
+				<div class="w iconw clearfix">
+					<div class="icon fl"><a href="">Android版下载</a></div>
+					<div class="icon fl"><a href="">iPhone版下载</a></div>
+					<div class="icon fl"><a href="">电脑版下载</a></div>
+					<div class="icon fl"><a href="">Pad版下载</a></div>
+					<div class="icon fl"><a href="">TV版下载</a></div>
+					<div class="icon fl"><a href="">WP版下载</a></div>
+					<div class="twocode"><a href="">手机扫一扫</a></div>
+				</div>
+			</div>
+			<div class="news clearfix w">
+				<div class="fl pdt w1 m">
+					<div class="newsheader clearfix">
+						<div class="fl">
+							<h4>活动专区</h4>
+						</div>
+						<div class="fr"><a href="">更多 ></a></div>
+					</div>
+					<div class="img"><img src="images/activity_pic.jpg" alt="">上uc.cn，下载抢100M流量礼包</div>
+					<ul>
+						<li>你没得到奖，因为你没有摇一摇</li>
+						<li>第二季环保袋活动开放申请啦</li>
+						<li>最壕UC微信号，天天送大奖</li>
+						<li>UC省钱攻略大曝光：6000万红包等你来！</li>
+						<li>手机浏览器成移动上网第一入口 UC稳居市场</li>
+					</ul>
+				</div>
+				<div class="fl pdt w1 m">
+					<div class="newsheader clearfix">
+						<div class="fl">
+							<h4>新闻动态</h4>
+						</div>
+						<div class="fr"><a href="">更多 ></a></div>
+					</div>
+					<div class="img"><img src="images/news_pic.jpg" alt="">不断寻找合伙人</div>
+					<ul>
+						<li>UC九游11月报告：《乱斗西游》成MOBA手</li>
+						<li>UC浏览器“抢票帮”颠覆传统 亲朋好友</li>
+						<li>UC浏览器新版造就极致视频体验</li>
+						<li>神马搜索与《梦想星搭档》展开娱乐内</li>
+						<li>手机浏览器使用频率仅次于即时通讯</li>
+					</ul>
+				</div>
+				<div class="fl pdt w1">
+					<div class="newsheader clearfix">
+						<div class="fl">
+							<h4>社区热帖</h4>
+						</div>
+						<div class="fr"><a href="">更多 ></a></div>
+					</div>
+					<div class="img"><img src="images/community_pic.jpg" alt="">UC浏览器抢票帮正式发布！团结一切力量</div>
+					<ul>
+						<li> UC浏览器Android版10.0皮肤制作教程</li>
+						<li>年底求加薪技巧！哥拼的是拍马屁的技巧</li>
+						<li>UC浏览器抢票帮——召唤朋友一起帮你抢</li>
+						<li>UC姐神秘面容首次曝光，多图胆小慎入</li>
+						<li>【uc记者团】2015年春节回家 攻略</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer clearfix">
+			<div class="D1 w pdtt bd1">
+				<div class="d1">
+					<ul class="fl">
+					<li>UC浏览器</li>
+					<li>产品动态</li>
+					<li>功能介绍</li>
+					<li>安卓浏览器</li>
+					<li>iPhone浏览器</li>
+					<li>电脑浏览器</li>
+					<li>WP浏览器</li>
+					<li>iPad浏览器</li>
+					<li>aPad浏览器</li>
+					<li>TV浏览器</li>
+					<li>塞班浏览器</li>
+				</ul>
+				</div>
+				<div class="d2">
+					<ul class="fl">
+					<li>公司</li>
+					<li>公司首页</li>
+					<li>公司概况</li>
+					<li>公司动态</li>
+					<li>管理团队</li>
+					<li>企业文化</li>
+					<li>粉丝专区</li>
+					<li>荣誉之旅</li>
+					<li>联系我们</li>
+					<li>投资者</li>
+					<li>UC闪屏</li>
+				</ul>
+				</div>
+				<div class="d3">
+					<ul class="fl">
+					<li>其它产品</li>
+					<li>UC九游</li>
+					<li>PP助手</li>
+					<li>神马搜索</li>
+					<li>UC云</li>
+					<li>U点充值</li>
+					<li>用户中心</li>
+					<li>体验中心</li>
+					<li>帮助中心</li>
+					<li>意见反馈</li>
+				</ul>
+				</div>
+				<div class="d4">
+					<ul class="fl">
+					<li>开放合作</li>
+					<li>游戏开放平台</li>
+					<li>运营商合作</li>
+					<li>终端厂商合作</li>
+					<li>互联网合作</li>
+					<li>开发者中心</li>
+					<li>战略投资</li>
+				</ul>
+				</div>
+				<div class="d5">
+					<ul class="fl">
+					<li>招聘</li>
+					<li>社会招聘</li>
+					<li>人才推荐</li>
+					<li>校园招聘</li>
+					<li>实习生招聘</li>
+					<li>内部推荐</li>
+					<li>走进UC</li>
+				</ul>
+				</div>
+				<div class="d6">
+					<ul class="fl">
+					<li>中文版</li>
+					<li>手机站</li>
+					<li>Pad站</li>
+					<li>TV站</li>
+					<li>UC浏览器微博</li>
+					<li>UC浏览器贴吧</li>
+					<li>UC浏览器微信</li>
+				</ul>
+				</div>
+			</div>
+			<div class="D2 w bd1">
+				<div class="fl">阿里巴巴集团</div>
+				<div class="fl">淘宝网</div>
+				<div class="fl">天猫</div>
+				<div class="fl">聚划算</div>
+				<div class="fl">全球速卖通</div>
+				<div class="fl">阿里巴巴国际交易市场</div>
+				<div class="fl">1688</div>
+				<div class="fl">阿里妈妈</div>
+				<div class="fl">阿里旅行·去啊</div>
+				<div class="fl">阿里云计算</div>
+				<div class="fl">YunOS</div>
+				<div class="fl">阿里通信</div>
+				<div class="fl">万网</div>
+				<div class="fl">高德</div>
+			</div>
+			<div class="D3 w bd1">
+				<div class="fl">友情链接 :</div>
+				<div class="fl">手机游戏</div>
+				<div class="fl">网易科技</div>
+				<div class="fl">dospy智能手机网</div>
+				<div class="fl">历趣手机软件</div>
+				<div class="fl">威锋网</div>
+				<div class="fl">小说全搜</div>
+				<div class="fl">IT之家</div>
+				<div class="fl">前瞻网</div>
+				<div class="fl">手机软件下载</div>
+				<div class="fl">pc6下载</div>
+				<div class="fl">KK语音</div>
+				<div class="fl">安卓市场</div>
+				<div class="fl">机锋网</div>
+			</div>
+			<div class="D4 w">
+				<div class="fl"><img src="images/logo_company.png" alt=""></div>
+				<div class="fl">
+					<p>2004-2014 uc.cn 版权所有 网络文化经营许可证：文网文[2010]176号</p>
+					<p>中华人民共和国互联网药品信息服务资格证：（粤）-非经营性-2011-0120</p>
+					<p>增值电信业务经营许可证: 粤B2-20070379 粤ICP备09210879号</p>
+				</div>
+				<div class="fr pdttt pdr"><img src="images/anva.png" alt=""></div>
+				<div class="fr pdttt pdr"><img src="images/knet_cn.png" alt=""></div>
+				<div class="fr pdttt pdr"><img src="images/gs.png" alt=""></div>
+				<div class="fr pdttt pdr"><img src="images/qa_wen.png" alt=""></div>
+			</div>
+		</div>
+	</body>
+</html>
